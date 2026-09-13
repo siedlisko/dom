@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog – Krzywa Chata</title>
+    <style>
+        :root {
+            --color-bg: #000000;
+            --color-card-bg: #121212;
+            --color-text: #ffffff;
+            --color-text-muted: #b3b3b3;
+            --color-accent: #d4a373;
+            --color-hover-border: #d4a373;
+            --color-border: #2a2a2a;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 800px; /* Zoptymalizowane pod wygodne czytanie tekstu */
+            width: 100%;
+        }
+
+        /* Nawigacja / Powrót */
+        .nav-back {
+            margin-bottom: 20px;
+        }
+
+        .nav-back a {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-back a:hover {
+            color: #ffffff;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: var(--color-accent);
+            margin: 0 0 10px 0;
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            color: var(--color-text-muted);
+            font-size: 1rem;
+            font-style: italic;
+        }
+
+        /* Lista artykułów */
+        .posts-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .post-card {
+            background-color: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            padding: 25px;
+            text-decoration: none;
+            color: var(--color-text);
+            transition: border-color 0.2s ease, transform 0.2s ease;
+            display: block;
+        }
+
+        .post-card:hover {
+            border-color: var(--color-hover-border);
+            transform: translateY(-2px);
+        }
+
+        .post-date {
+            font-size: 0.85rem;
+            color: var(--color-accent);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .post-title {
+            font-size: 1.4rem;
+            margin: 0 0 10px 0;
+            color: #ffffff;
+        }
+
+        .post-excerpt {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: var(--color-accent);
+            font-weight: bold;
+        }
+
+        /* Stopka */
+        footer {
+            margin-top: auto;
+            padding-top: 20px;
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            border-top: 1px solid var(--color-border);
+            width: 100%;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Powrót do strony głównej -->
+        <div class="nav-back">
+            <a href="/">&larr; Powrót do strony głównej</a>
+        </div>
+
+        <header>
+            <h1>Blog z Siedliska</h1>
+            <div class="subtitle">Zapiski o drewnie, szafkach na nasiona, wiejskich przetworach i muzyce drogi.</div>
+        </header>
+
+        <!-- Lista Wpisów -->
+        <div class="posts-list">
+
+            <!-- Wpis 1 -->
+            <a href="/wpis-szafki-na-nasiona.html" class="post-card">
+                <div class="post-date">12 września 2026</div>
+                <h2 class="post-title">Jak powstała pierwsza szafka na nasiona off-grid</h2>
+                <p class="post-excerpt">
+                    Deseczki miały zaledwie 10 cm szerokości, ale wystarczyło to, by stworzyć funkcjonalną szafkę z przegródkami na słoiczki z własnymi nasionami. Dziewczyna namalowała na drzwiczkach słowiańskie motywy...
+                </p>
+                <span class="read-more">Czytaj dalej &rarr;</span>
+            </a>
+
+            <!-- Wpis 2 -->
+            <a href="/wpis-muzyka-na-ulicy.html" class="post-card">
+                <div class="post-date">28 sierpnia 2026</div>
+                <h2 class="post-title">Sobotnie granie na rynku w miasteczku</h2>
+                <p class="post-excerpt">
+                    Relacja z ostatniego wyjazdu. O tym, jak ludzie reagują na tradycyjne brzmienia, o rozmowach przy stoisku z przetworami i lękach związanych z występowaniem na żywo.
+                </p>
+                <span class="read-more">Czytaj dalej &rarr;</span>
+            </a>
+
+            <!-- Wpis 3 -->
+            <a href="/wpis-przetwory-leto.html" class="post-card">
+                <div class="post-date">15 sierpnia 2026</div>
+                <h2 class="post-title">Zapasy na zimę: Syrop z dzikiej róży i pędów sosny</h2>
+                <p class="post-excerpt">
+                    Zbieranie ziół i owoców w okolicznych lasach to nasz coroczny rytuał. Dzisiaj o tym, jak zachować smak lata w słoikach bez użycia zbędnej chemii.
+                </p>
+                <span class="read-more">Czytaj dalej &rarr;</span>
+            </a>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; Krzywa Chata. Wszystkie prawa zastrzeżone.</p>
+        <p>Kontakt: <a href="mailto:kontakt@krzywachata.pl">kontakt@krzywachata.pl</a></p>
+    </footer>
+
+</body>
+</html>
