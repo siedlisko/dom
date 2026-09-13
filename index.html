@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Krzywa Chata – Siedlisko, Rzemiosło i Muzyka</title>
     <style>
-        /* Styl ogólny strony */
+        /* Styl ogólny strony - Ciemna motyw stylizowany */
         :root {
-            --color-bg: #f4efe6;
-            --color-card-bg: #ffffff;
-            --color-text: #2c2523;
-            --color-accent: #6b4423;
-            --color-hover: #8c5a2e;
-            --color-border: #d7caaa;
+            --color-bg: #000000;
+            --color-card-bg: #121212;
+            --color-text: #ffffff;
+            --color-text-muted: #b3b3b3;
+            --color-accent: #d4a373;
+            --color-hover-border: #d4a373;
+            --color-border: #2a2a2a;
         }
 
         body {
@@ -25,49 +26,54 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            box-sizing: border-box;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1000px; /* Poszerzono container, aby 4 kafelki zmieściły się swobodnie */
             width: 100%;
             text-align: center;
         }
 
         /* Sekcja Logo */
         .logo-container {
-            margin-top: 20px;
+            margin-top: 10px;
             margin-bottom: 20px;
         }
 
         .logo {
-            max-width: 200px;
+            max-width: 160px;
             height: auto;
             border-radius: 50%;
+            border: 2px solid var(--color-border);
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--color-accent);
-            margin-top: 10px;
+            margin-top: 15px;
             margin-bottom: 10px;
             font-weight: normal;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
         /* Opis siedliska */
         .description {
-            font-size: 1.1rem;
+            font-size: 1rem;
             line-height: 1.6;
-            margin-bottom: 40px;
-            color: #4a3e3d;
+            margin-bottom: 35px;
+            color: var(--color-text-muted);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
             padding: 0 10px;
         }
 
-        /* Kafelki z linkami */
+        /* Układ 4 kafelków obok siebie */
         .links-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(4, 1fr); /* Dokładnie 4 kolumny obok siebie */
+            gap: 15px;
             width: 100%;
             margin-bottom: 40px;
         }
@@ -75,50 +81,65 @@
         .card {
             background-color: var(--color-card-bg);
             border: 1px solid var(--color-border);
-            border-radius: 8px;
+            border-radius: 6px;
             overflow: hidden;
             text-decoration: none;
             color: var(--color-text);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+            border-color: var(--color-hover-border);
+            box-shadow: 0 4px 12px rgba(212, 163, 115, 0.15);
         }
 
         .card img {
             width: 100%;
-            height: 140px;
+            height: 100px; /* Zmniejszona wysokość, by kafelki były bardziej zwarte */
             object-fit: cover;
         }
 
         .card-content {
-            padding: 15px;
+            padding: 10px;
             text-align: center;
         }
 
         .card-title {
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: bold;
             color: var(--color-accent);
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
         .card-desc {
-            font-size: 0.9rem;
-            color: #666;
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+            line-height: 1.3;
+        }
+
+        /* Responsywność dla ekranów smartfonów i małych tabletów */
+        @media (max-width: 768px) {
+            .links-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2x2 na mniejszych ekranach */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .links-grid {
+                grid-template-columns: 1fr; /* 1 kolumna na bardzo wąskich ekranach */
+            }
         }
 
         /* Stopka */
         footer {
             margin-top: auto;
             padding-top: 20px;
-            font-size: 0.9rem;
-            color: #777;
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
             border-top: 1px solid var(--color-border);
             width: 100%;
             text-align: center;
@@ -135,7 +156,6 @@
     <div class="container">
         <!-- Logo -->
         <div class="logo-container">
-            <!-- Podmień 'logo.jpg' na ścieżkę do swojego pliku graficznego -->
             <img src="logo.jpg" alt="Logo Krzywa Chata" class="logo">
             <h1>Krzywa Chata</h1>
         </div>
@@ -147,15 +167,15 @@
             przygotowujemy domowe przetwory oraz dzielimy się muzyką na ulicach okolicznych miasteczek.
         </div>
 
-        <!-- Kafelki z Działaniami (Linki) -->
+        <!-- 4 Kafelki obok siebie -->
         <div class="links-grid">
             
             <!-- Link do Bloga -->
             <a href="/blog" class="card">
                 <img src="images/blog.jpg" alt="Blog">
                 <div class="card-content">
-                    <div class="card-title">Blog i Aktualności</div>
-                    <div class="card-desc">Czytaj opowieści z życia w siedlisku i relacje z trasy.</div>
+                    <div class="card-title">Blog</div>
+                    <div class="card-desc">Opowieści i wieści z siedliska.</div>
                 </div>
             </a>
 
@@ -164,7 +184,7 @@
                 <img src="images/drewno.jpg" alt="Rękodzieło z drewna">
                 <div class="card-content">
                     <div class="card-title">Wyroby z Drewna</div>
-                    <div class="card-desc">Ręcznie robione szafki na nasiona i zdobione meble.</div>
+                    <div class="card-desc">Szafki na nasiona i rękodzieło.</div>
                 </div>
             </a>
 
@@ -172,8 +192,8 @@
             <a href="/przetwory" class="card">
                 <img src="images/przetwory.jpg" alt="Wiejskie Przetwory">
                 <div class="card-content">
-                    <div class="card-title">Swojskie Przetwory</div>
-                    <div class="card-desc">Lokalne przetwory, syropy i zbiory z naszego ogrodu.</div>
+                    <div class="card-title">Przetwory</div>
+                    <div class="card-desc">Swojskie przetwory i zbiory z ogrodu.</div>
                 </div>
             </a>
 
@@ -181,8 +201,8 @@
             <a href="/trasa" class="card">
                 <img src="images/muzyka.jpg" alt="Muzyka uliczna">
                 <div class="card-content">
-                    <div class="card-title">Gdzie Nas Spotkasz?</div>
-                    <div class="card-desc">Sprawdź kalendarz występów ulicznych i kiermaszy.</div>
+                    <div class="card-title">Gdzie Gramy</div>
+                    <div class="card-desc">Kalendarz występów ulicznych.</div>
                 </div>
             </a>
 
