@@ -1,1 +1,199 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krzywa Chata – Siedlisko, Rzemiosło i Muzyka</title>
+    <style>
+        /* Styl ogólny strony */
+        :root {
+            --color-bg: #f4efe6;
+            --color-card-bg: #ffffff;
+            --color-text: #2c2523;
+            --color-accent: #6b4423;
+            --color-hover: #8c5a2e;
+            --color-border: #d7caaa;
+        }
 
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Sekcja Logo */
+        .logo-container {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--color-accent);
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        /* Opis siedliska */
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: #4a3e3d;
+            padding: 0 10px;
+        }
+
+        /* Kafelki z linkami */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background-color: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden;
+            text-decoration: none;
+            color: var(--color-text);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--color-accent);
+            margin-bottom: 5px;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Stopka */
+        footer {
+            margin-top: auto;
+            padding-top: 20px;
+            font-size: 0.9rem;
+            color: #777;
+            border-top: 1px solid var(--color-border);
+            width: 100%;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo-container">
+            <!-- Podmień 'logo.jpg' na ścieżkę do swojego pliku graficznego -->
+            <img src="logo.jpg" alt="Logo Krzywa Chata" class="logo">
+            <h1>Krzywa Chata</h1>
+        </div>
+
+        <!-- Opis Siedliska -->
+        <div class="description">
+            Witaj w Krzywej Chacie – naszym wiejskim siedlisku, gdzie czas płynie w rytmie natury. 
+            Tworzymy tradycyjne wyroby z drewna, zdobione motywami ludowymi i słowiańskimi, 
+            przygotowujemy domowe przetwory oraz dzielimy się muzyką na ulicach okolicznych miasteczek.
+        </div>
+
+        <!-- Kafelki z Działaniami (Linki) -->
+        <div class="links-grid">
+            
+            <!-- Link do Bloga -->
+            <a href="/blog" class="card">
+                <img src="images/blog.jpg" alt="Blog">
+                <div class="card-content">
+                    <div class="card-title">Blog i Aktualności</div>
+                    <div class="card-desc">Czytaj opowieści z życia w siedlisku i relacje z trasy.</div>
+                </div>
+            </a>
+
+            <!-- Wyroby z Drewna -->
+            <a href="/drewno" class="card">
+                <img src="images/drewno.jpg" alt="Rękodzieło z drewna">
+                <div class="card-content">
+                    <div class="card-title">Wyroby z Drewna</div>
+                    <div class="card-desc">Ręcznie robione szafki na nasiona i zdobione meble.</div>
+                </div>
+            </a>
+
+            <!-- Przetwory -->
+            <a href="/przetwory" class="card">
+                <img src="images/przetwory.jpg" alt="Wiejskie Przetwory">
+                <div class="card-content">
+                    <div class="card-title">Swojskie Przetwory</div>
+                    <div class="card-desc">Lokalne przetwory, syropy i zbiory z naszego ogrodu.</div>
+                </div>
+            </a>
+
+            <!-- Występy / Kalendarz -->
+            <a href="/trasa" class="card">
+                <img src="images/muzyka.jpg" alt="Muzyka uliczna">
+                <div class="card-content">
+                    <div class="card-title">Gdzie Nas Spotkasz?</div>
+                    <div class="card-desc">Sprawdź kalendarz występów ulicznych i kiermaszy.</div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- Stopka -->
+    <footer>
+        <p>&copy; Krzywa Chata. Wszystkie prawa zastrzeżone.</p>
+        <p>Kontakt: <a href="mailto:kontakt@krzywachata.pl">kontakt@krzywachata.pl</a></p>
+    </footer>
+
+</body>
+</html>
